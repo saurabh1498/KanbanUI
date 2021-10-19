@@ -1,0 +1,40 @@
+<div class="align">
+
+    <div class="pull-left">
+        <button type="button" (click)="back()" class="btn btn-danger">Back</button>
+    </div>
+</div>
+
+<div class="container">
+    <h3 class="page-header">Project Details</h3>
+    <table >
+        <tr>
+            <th>Project ID</th>
+            <th>Name</th>
+            <th>Project Identifier</th>
+            <th>Description</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Created At</th>
+            <th>Updated At</th>
+            <th>Backlog Id</th>
+    
+            
+        </tr>
+        <tr *ngFor="let a of projects ">
+            <td>{{a.id}}</td>
+            <td>{{a.projectName}}</td>
+            <td>{{a.projectIdentifier}}</td>
+            <td>{{a.description}}</td>
+            <td>{{a.startDate}}</td>
+            <td>{{a.endDate}}</td>
+            <td>{{a.createAt}}</td>
+            <td>{{a.updateAt}}</td>
+            <td>{{a.backlog.id}}</td>
+           
+        </tr>
+    </table>
+    
+</div>
+
+

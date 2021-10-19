@@ -1,0 +1,34 @@
+
+<nav class="navbar navbar-dark bg-primary"id="myNavbar">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Project Management System</a>
+      </div>
+    <ul class="nav navbar-nav">
+      <li class="dropdown">
+        <a class="dropdown-toggle"  data-toggle="dropdown" href="#">Project Task<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a class="fa fa-plus" href="#" [routerLink]="['/addprojecttask']">Add Project Task</a></li>
+          <li><a class="fa fa-edit" [routerLink]="['/updateprojecttask']">Update Project Task</a></li>
+     
+          <li><a class="fa fa-search"  [routerLink]="['/searchprojecttasks']"> Search Project Task</a></li>
+          <li><a class="fa fa-refresh"  [routerLink]="['/viewprojecttasks']"> Project Task</a></li>
+          <li><a class="fa fa-trash"  [routerLink]="['/deleteprojecttask']"> Delete Project Task</a></li>
+        </ul>
+      </li>
+      
+    </ul>
+
+    <div class="nav navbar-nav navbar-right">
+        <button (click)="logout()" type="button" class="btn btn-info btn-lg">
+            <span class="glyphicon glyphicon-log-out"></span> Log out
+          </button>  
+     </div>
+  </div>
+</nav>
+<div class="align">
+
+    <div class="pull-left">
+        <button type="button" (click)="back()" class="btn btn-danger">Back</button>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="align">
+
+  <div class="pull-left">
+      <button type="button" (click)="back()" class="btn btn-danger">Back</button>
+  </div>
+</div>
+
+<div  class="container">
+    <div >
+        <h2> Add Project Tasks </h2>
+    </div>
+    <form #frm="ngForm" class="form-group" (ngSubmit)="submitform()" > 
+  <!-- Diagnostic Center Id :-  <input  type="text" width="20"  name="diagnosticcenter.dc_id" required [(ngModel)]="diagnosticcenter.dc_id" class="form-control"/> <br> -->
+  Project Sequence:-  <input #dcName="ngModel" type="text" width="20"  name="projecttask.projectSequence" required  [(ngModel)]="projecttask.projectSequence" placeholder="Enter Project Sequence" class="form-control" /> <br>
+  Project Identifier:-<input  type="text" width="20"  name="projecttask.projectIdentifier" required [(ngModel)]="projecttask.projectIdentifier" placeholder="Enter Project Identifier" class="form-control"/> <br>
+  Backlog ID:-<input  type="text" width="20"  name="projecttask.backlog.id" required [(ngModel)]="projecttask.backlog.id" placeholder="Enter Backlog ID" class="form-control"/> <br>
+  
+  Acceptance Criteria:-<input  type="text" width="20"  name="projecttask.acceptanceCriteria" required [(ngModel)]="projecttask.acceptanceCriteria" placeholder="Enter Project Task Acceptance Criteria" class="form-control"/> <br>
+  Status:-<input  type="text" width="20"  name="projecttask.status" required [(ngModel)]="projecttask.status" placeholder="Enter Project Task Status" class="form-control"/> <br>
+  Priority:-<input  type="text" width="20"  name="projecttask.priority" required [(ngModel)]="projecttask.priority" placeholder="Enter Project Task Priority" class="form-control"/> <br>
+
+  Summary :-  <textarea width="20"  name="projecttask.summary"  required [(ngModel)]="projecttask.summary" placeholder="Enter Summary" class="form-control"></textarea> <br>
+  Due Date:- <input type="date" width="20"  name="projecttask.dueDate" required  [(ngModel)]="projecttask.dueDate" placeholder="Enter Project Due Date" class="form-control" /> <br>
+
+
+
+  
+  <div *ngIf="frm.invalid && frm.touched"  class="alert alert-danger">
+    Enter Valid Data
+</div>  
+  <button class="btn btn-primary" [disabled]="!frm.valid" type="submit"> Submit </button>
+  <h2>{{message}}</h2>
+
+</form>
+</div>

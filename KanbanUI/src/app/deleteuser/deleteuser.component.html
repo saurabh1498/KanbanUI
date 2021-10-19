@@ -1,0 +1,18 @@
+<div class="align">
+
+    <div class="pull-left">
+        <button type="button" (click)="back()" class="btn btn-danger">Back</button>
+    </div>
+</div>
+<div class="container">
+    <br>
+    <div class="alert alert-info" *ngIf="flag">
+        <p class="lead">{{msg}}</p>
+    </div>
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">User To Be Deleted</label>
+    <input type="text" class="form-control" name="id" placeholder="Enter ID" [(ngModel)]="id">
+  </div>
+  <br>
+<button class="btn btn-danger" (click)="deleteUser()">Delete User</button>
+</div>

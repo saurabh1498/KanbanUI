@@ -1,0 +1,30 @@
+<div class="align">
+
+  <div class="pull-left">
+      <button type="button" (click)="back()" class="btn btn-danger">Back</button>
+  </div>
+</div>
+ 
+  <div  class="container">
+    <div >
+        <h2> Add Project Details </h2>
+    </div>
+    <form #frm="ngForm" class="form-group" (ngSubmit)="submitform()" > 
+ 
+  Project Name:-  <input #dcName="ngModel" type="text" width="20"  name="project.projectName" required  [(ngModel)]="project.projectName" placeholder="Enter Project Name" class="form-control" /> <br>
+
+  Project Identifier:-<input  type="text" width="20"  name="project.projectIdentifier" required [(ngModel)]="project.projectIdentifier" placeholder="Enter Project Identifier" class="form-control"/> <br>
+  Description:-  <textarea width="20"  name="project.description"  required [(ngModel)]="project.description" placeholder="Enter Description" class="form-control"></textarea> <br>
+  Start Date:- <input type="date" width="20"  name="project.startDate" required  [(ngModel)]="project.startDate" placeholder="Enter Project Start Date" class="form-control" /> <br>
+  End Date:- <input type="date" width="20"  name="project.endDate" required  [(ngModel)]="project.endDate" placeholder="Enter Project End Date" class="form-control" /> <br>
+ 
+
+
+  <div *ngIf="frm.invalid && frm.touched"  class="alert alert-danger">
+    Enter Valid Data
+</div>  
+  <button class="btn btn-primary" [disabled]="!frm.valid" type="submit"> Submit </button>
+  <h2>{{message}}</h2>
+
+</form>
+</div>

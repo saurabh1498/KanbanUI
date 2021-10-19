@@ -1,0 +1,12 @@
+.container{
+    width:1000px;
+    height:1000px;
+    background:blue;
+  }
+.dropdown-toggle{
+    color: white;
+  }
+.navbar-brand
+{
+  color: white;
+}

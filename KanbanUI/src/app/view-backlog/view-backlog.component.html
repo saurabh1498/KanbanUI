@@ -1,0 +1,30 @@
+<div class="align">
+
+    <div class="pull-left">
+        <button type="button" (click)="back()" class="btn btn-danger">Back</button>
+    </div>
+</div>
+<div class="container">
+    <h3 class="page-header">Backlog Details</h3>
+    <table >
+        <tr>
+            <th>Backlog ID</th>
+            <th>PT Sequence</th>
+            <th>Project Identifier</th>
+          
+    
+        
+        
+        </tr>
+        <tr *ngFor="let a of backlogs ">
+            <td>{{a.id}}</td>
+            <td>{{a.pTSequence}}</td>
+            <td>{{a.projectIdentifier}}</td>
+          
+           
+        </tr>
+    </table>
+    
+</div>
+
+

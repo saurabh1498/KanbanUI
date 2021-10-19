@@ -1,0 +1,25 @@
+
+<nav class="navbar navbar-dark bg-primary"id="myNavbar">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Project Management System</a>
+      </div>
+      
+    <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a class="textwhite" [routerLink]="['/registeruser']">Register User</a></li>
+        <li><a class="textwhite" [routerLink]="['/updateuser']">Update User</a></li>
+        <li ><a class="textwhite" [routerLink]="['/viewusers']">Users</a></li>
+        <li><a class="textwhite" [routerLink]="['/searchuser']">Search User</a></li>
+        <li ><a class="textwhite" [routerLink]="['/deleteuser']">Delete User</a></li>
+        
+      
+    </ul>
+
+    <div class="nav navbar-nav navbar-right">
+        <button (click)="logout()" type="button" class="btn btn-info btn-lg">
+            <span class="glyphicon glyphicon-log-out"></span> Log out
+          </button>  
+     </div>
+  </div>
+</nav>

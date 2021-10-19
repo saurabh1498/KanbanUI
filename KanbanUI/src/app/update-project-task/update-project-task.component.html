@@ -1,0 +1,96 @@
+<div class="align">
+
+    <div class="pull-left">
+        <button type="button" (click)="back()" class="btn btn-danger">Back</button>
+    </div>
+  </div>
+
+
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="h4">
+          Update Project
+        </h1>
+        <hr>
+        <div *ngIf="yes==1" class="text-success">
+            <p>{{msg}}</p>
+        </div>
+        <div *ngIf="yes==2"  class="text-danger">
+            <p>{{msg}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <form >
+            <div class="from-group" *ngIf = "!exists">
+                <label for="id">Project Task Id</label>
+                <input type="text" name="id" id="" class="form-control" placeholder="Enter Project Id" [(ngModel)] = "id">
+                <br>
+                <button (click)="findById()" class="btn btn-primary btn-md">Update</button>
+            </div>
+           
+
+            <br>
+           <div *ngIf = "exists">
+            <form #frm="ngForm" class="form-group">
+                <div class="from-group">
+                    <label for="id">Project Task Id</label>
+                    <input type="text" name="projecttask.id"  class="form-control" placeholder="Enter Project Task Id" [(ngModel)] = "projecttask.id" readonly>
+                </div>
+                <br>
+                <div class="from-group">
+                    <label for="name">Project Sequence</label>
+                    <input type="text" name="projecttask.projectSequence" class="form-control" placeholder="Enter Project Sequence" [(ngModel)] = "projecttask.projectSequence" required>
+                </div>
+                <br>
+                <div class="from-group">
+                    <label for="name">Project Identifier</label>
+                    <input type="text" name="projecttask.projectIdentifier" class="form-control" placeholder="Enter Project Identifier" [(ngModel)] = "projecttask.projectIdentifier" required> 
+                </div>
+                <br>
+                <div class="from-group">
+                  <label for="name">Summary</label>
+                  <input type="text" name="projecttask.summary"class="form-control" placeholder="Enter Task Summary" [(ngModel)] = "projecttask.summary" required>
+              </div>
+              <br>
+              <div class="from-group">
+                <label for="name">Acceptance Criteria</label>
+                <input type="text" name="projecttask.acceptanceCriteria" class="form-control" placeholder="Enter Acceptance Criteria" [(ngModel)] = "projecttask.acceptanceCriteria" required> 
+            </div>
+            <br>
+            <div class="from-group">
+              <label for="name">Status</label>
+              <input type="text" name="projecttask.status"class="form-control" placeholder="Enter Task Status" [(ngModel)] = "projecttask.status" required>
+          </div>
+          <br>
+         
+          <div class="from-group">
+            <label for="name">Priority</label>
+            <input type="text" name="projecttask.priority"class="form-control" placeholder="Enter Task Priority" [(ngModel)] = "projecttask.priority" required>
+        </div>
+        <br>
+              <div class="from-group">
+                  <label for="name">Due Date</label>
+                  <input type="date" name="projecttask.dueDate"  class="form-control" placeholder="Enter Project Due Date" [(ngModel)] = "projecttask.dueDate" required>
+              </div>
+             
+        
+              <br>
+              <div *ngIf="frm.invalid && frm.touched"  class="alert alert-danger">
+                Enter Valid Data
+            </div> 
+               
+                <div class="from-group">
+                     <button (click)="update()"[disabled]="!frm.valid" class="btn btn-primary btn-md">Update</button>
+                </div>
+                <br>
+            </form>
+           </div>
+        </form>
+        <br>
+      </div>
+    </div>
+  </div>
+  

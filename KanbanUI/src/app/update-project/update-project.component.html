@@ -1,0 +1,81 @@
+<div class="align">
+
+  <div class="pull-left">
+      <button type="button" (click)="back()" class="btn btn-danger">Back</button>
+  </div>
+</div>
+
+
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="h4">
+          Update Project
+        </h1>
+        <hr>
+        <div *ngIf="yes==1" class="text-success">
+            <p>{{msg}}</p>
+        </div>
+        <div *ngIf="yes==2"  class="text-danger">
+            <p>{{msg}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <form >
+            <div class="from-group" *ngIf = "!exists">
+                <label for="id">Project Id</label>
+                <input type="text" name="id" id="" class="form-control" placeholder="Enter Project Id" [(ngModel)] = "id">
+                <br>
+                <button (click)="findById()" class="btn btn-primary btn-md">Update</button>
+            </div>
+            <br>
+           <div *ngIf = "exists">
+            <form #frm="ngForm" class="form-group">
+                <div class="from-group">
+                    <label for="id">Project Id</label>
+                    <input type="text" name="project.id"  class="form-control" placeholder="Enter Project Id" [(ngModel)] = "project.id" readonly>
+                </div>
+                <br>
+                <div class="from-group">
+                    <label for="name">Project Name</label>
+                    <input type="text" name="project.projectName" class="form-control" placeholder="Enter Project Name" [(ngModel)] = "project.projectName" readonly>
+                </div>
+                <br>
+                <div class="from-group">
+                    <label for="name">Project Identifier</label>
+                    <input type="text" name="project.projectIdentifier" class="form-control" placeholder="Enter Project Identifier" [(ngModel)] = "project.projectIdentifier" readonly> 
+                </div>
+                <br>
+                <div class="from-group">
+                  <label for="name">Description</label>
+                  <input type="text" name="project.description"class="form-control" placeholder="Enter Project Description" [(ngModel)] = "project.description" required>
+              </div>
+              <br>
+              <div class="from-group">
+                  <label for="name">Start Date</label>
+                  <input type="date" name="project.startDate"  class="form-control" placeholder="Enter Project Start Date" [(ngModel)] = "project.startDate" required>
+              </div>
+              <div class="from-group">
+                <label for="name">End Date</label>
+                <input type="date" name="project.endDate"  class="form-control" placeholder="Enter Project End Date" [(ngModel)] = "project.endDate" required>
+            </div>
+            <br>
+              <br>
+              <div *ngIf="frm.invalid && frm.touched"  class="alert alert-danger">
+                Enter Valid Data
+            </div> 
+               
+                <div class="from-group">
+                     <button (click)="update()"[disabled]="!frm.valid" class="btn btn-primary btn-md">Update</button>
+                </div>
+                <br>
+            </form>
+           </div>
+        </form>
+        <br>
+      </div>
+    </div>
+  </div>
+  

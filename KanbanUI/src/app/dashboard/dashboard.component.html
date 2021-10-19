@@ -1,0 +1,44 @@
+
+<nav class="navbar navbar-dark bg-primary"id="myNavbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Project Management System</a>
+    </div>
+  <ul class="nav navbar-nav">
+    <li class="dropdown">
+      <a class="dropdown-toggle"  data-toggle="dropdown" href="#">Project<span class="caret"></span></a>
+      <ul class="dropdown-menu">
+       
+        <li><a class="fa fa-search"  [routerLink]="['/usersearchprojects']"> Search Project</a></li>
+        <li><a class="fa fa-refresh"  [routerLink]="['/userviewprojects']"> Projects</a></li>
+        
+      </ul>
+    </li>    
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">Backlog<span class="caret"></span></a>
+      <ul class="dropdown-menu">
+       
+          <li><a class="fa fa-refresh" [routerLink]="['/userviewbacklogs']"> View Backlog</a></li>
+   
+        <li><a class="fa fa-search" [routerLink]="['/usersearchbacklogs']"> search Backlog</a></li>
+      </ul>
+    </li>
+ 
+  <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Project Task <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+    
+      <li><a class="fa fa-edit" [routerLink]="['/userupdateprojecttasks']">Update Project Task</a></li>
+        <li><a class="fa fa-refresh" [routerLink]="['/userviewprojecttasks']"> View Project Tasks</a></li>
+      <li><a class="fa fa-search" [routerLink]="['/usersearchprojecttasks']"> Search Project Tasks</a></li>
+       </ul> 
+       </li>
+  </ul>
+
+  <div class="nav navbar-nav navbar-right">
+      <button (click)="logout()" type="button" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </button>  
+   </div>
+</div>
+</nav>

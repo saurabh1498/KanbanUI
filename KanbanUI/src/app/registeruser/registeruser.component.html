@@ -1,0 +1,36 @@
+<div class="align">
+
+    <div class="pull-left">
+        <button type="button" (click)="back()" class="btn btn-danger">Back</button>
+    </div>
+</div>
+  <div  class="container">
+    <div >
+        <h2>  Register User </h2>
+    </div>
+    <form #frm="ngForm" class="form-group" (ngSubmit)="submitform()" > 
+  <!-- Diagnostic Center Id :-  <input  type="text" width="20"  name="diagnosticcenter.dc_id" required [(ngModel)]="diagnosticcenter.dc_id" class="form-control"/> <br> -->
+ 
+  Name:-<input #dcName="ngModel"  type="text" width="20"  name="user.name" required [(ngModel)]="user.name" placeholder="Enter User Name" class="form-control"/> <br>
+  User Email ID:-  <input type="email" width="20"  name="user.email" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" required  [(ngModel)]="user.email"  placeholder="Enter Email ID" class="form-control" /> <br>
+  Password:-  <input  type="password" width="20"  name="user.password" pattern="[a-zA-Z0-9@]{8,14}" required [(ngModel)]="user.password" placeholder="Enter Password" class="form-control"/> <br>
+  Contact No:-  <input type="number" width="20"  name="user.contact" pattern=[0-9]{10}  required  [(ngModel)]="user.contact"  placeholder="Enter Contact No" class="form-control" /> <br>
+  Login Name:-  <input type="text" width="20"  name="user.loginname" pattern="[a-zA-Z0-9+_.-]{5,14}" required  [(ngModel)]="user.loginname"  placeholder="Enter Login Name" class="form-control" /> <br>
+ 
+  Status:-<select class="form-control"  aria-label="User Status" name="user.status" [(ngModel)]="user.status"  required>
+    <option value="active">Active</option>
+    
+    </select>
+
+  Role:-<select class="form-control"  aria-label="User Role" name="user.role" [(ngModel)]="user.role"  required>
+    <option value="user">User</option>
+    <option value="manager">Manager</option>
+    </select>
+  <div *ngIf="frm.invalid && frm.touched"  class="alert alert-danger">
+    Enter Valid Data
+</div> 
+  <button class="btn btn-primary" [disabled]="!frm.valid" type="submit"> Submit </button>
+  <h2>{{message}}</h2>
+
+</form>
+</div>

@@ -1,0 +1,53 @@
+<style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    </style>
+   <div class="align">
+
+    <div class="pull-left">
+        <button type="button" (click)="back()" class="btn btn-danger">Back</button>
+    </div>
+</div>
+
+<div class="container">
+    <h3 class="page-header">User Details</h3>
+    <table >
+        <tr>
+            <th>User ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>contact</th>
+            <th>loginname</th>
+            <th>status</th>
+            <th>role</th>
+ 
+    
+        </tr>
+        <tr *ngFor="let user of users ">
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.contact}}</td>
+            <td>{{user.loginname}}</td>
+           
+            <td>{{user.status}}</td>
+            <td>{{user.role}}</td>
+            
+        </tr>
+    </table>
+    
+</div>
+
